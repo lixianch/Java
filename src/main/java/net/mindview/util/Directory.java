@@ -43,6 +43,10 @@ public class Directory {
         return recursiveDirs(file,".*");
     }
 
+    public static TreeInfo walk(String s){
+        return walk(new File(s));
+    }
+
     public static TreeInfo recursiveDirs(File file, String regex) {
         TreeInfo result = new TreeInfo();
         File[] files = file.listFiles();
@@ -59,8 +63,8 @@ public class Directory {
     }
 
     public static class TreeInfo implements Iterable<File> {
-        private List<File> files = Lists.newArrayList();
-        private List<File> dirs = Lists.newArrayList();
+        public List<File> files = Lists.newArrayList();
+        public List<File> dirs = Lists.newArrayList();
 
         @Override
         public Iterator<File> iterator() {
