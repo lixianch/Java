@@ -1,0 +1,11 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example2";
+option java_outer_classname = "UpdatePerson";
+message Person {
+    reserved 2;
+    required int32 id = 1;
+//    optional string name = 2;
+    repeated string phones = 3;
+    optional string login = 4;
+}

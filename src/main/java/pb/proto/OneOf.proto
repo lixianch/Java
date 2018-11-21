@@ -1,0 +1,13 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example6";
+option java_outer_classname = "OneOfProto";
+import "pb/proto/Student.proto";
+import "pb/proto/Teacher.proto";
+message OneOf {
+    required int32 type = 1 [default = 1];
+    oneof data {
+        Student student = 2;
+        Teacher teacher = 3;
+    }
+}

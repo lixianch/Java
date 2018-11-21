@@ -1,0 +1,9 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example4";
+option java_outer_classname = "SearchReqeustProto";
+message SearchRequest {
+    required string query = 1 [default = "1"];
+    optional int32 currentPage = 2;
+    optional int32 size_per_page = 3;
+}

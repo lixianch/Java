@@ -1,0 +1,15 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example4";
+option java_outer_classname = "SearchResponseProto";
+message SearchResponse {
+    message Result {
+        required int32 count = 1;
+        repeated Order orders = 2;
+        message Order {
+            optional string order_num = 1;
+            optional string address = 2;
+        }
+    }
+    optional Result result = 1;
+}

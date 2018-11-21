@@ -1,0 +1,10 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example3";
+option java_outer_classname = "TeacherProto";
+import public "pb/proto/Address.proto";
+message Teacher {
+    optional string name = 1;
+    optional Address homeAddress = 2;
+    optional Address schoolAddress = 3;
+}

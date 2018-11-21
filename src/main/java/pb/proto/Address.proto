@@ -1,0 +1,8 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example3";
+option java_outer_classname = "AddressProto";
+message Address {
+    optional string street = 1;
+    optional string zipcode = 2;
+}

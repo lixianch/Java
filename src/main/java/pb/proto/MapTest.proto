@@ -1,0 +1,8 @@
+syntax = "proto2";
+package pb.proto;
+option java_package = "pb.example7";
+option java_outer_classname = "MapProto";
+import "pb/proto/Student.proto";
+message MapTest {
+    map<string,Student> data = 1;
+}
