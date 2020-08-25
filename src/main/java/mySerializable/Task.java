@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Task implements Runnable,Serializable {
     private static final long serialVersionUID = 3642653739637952479L;
-
+    String a;
     @Override
     public void run() {
         System.out.println(new Date());

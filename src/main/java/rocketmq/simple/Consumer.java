@@ -6,6 +6,7 @@ import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.MessageExt;
+import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Consumer {
     public static void main(String[] args) throws Exception {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_group");
         consumer.setNamesrvAddr("192.168.186.133:9876");
+        consumer.setMessageModel(MessageModel.CLUSTERING);
         consumer.subscribe("TopicTest","*");
         MessageListenerConcurrently listener = (List<MessageExt> msgs, ConsumeConcurrentlyContext context)->{
             System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);

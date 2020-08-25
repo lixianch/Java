@@ -11,6 +11,7 @@ public class DesTask {
     public void des() throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("E://task.ser"));
         Task task = (Task) ois.readObject();
+        System.out.println(task.a);
         new Thread(task).start();
     }
 
